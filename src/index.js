@@ -1,13 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import TwitterProject from './projects/twitter'
+import {Route, BrowserRouter as Router} from 'react-router-dom'
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+const routing=(
+  <Router>
+    <div id='routing-container'>
+    <Route path='/home' component ={App}></Route>
+      <Route path='/TwitterProject' component ={TwitterProject}></Route>
+    </div>
+  </Router>
+)
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+ routing,
   document.getElementById('root')
 );
 
